@@ -1,0 +1,13 @@
+{
+  "name": "in_client_server",
+  "version": "1.0.0",
+  "description": "In server client server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "",
+    "start": "",
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC"
+}

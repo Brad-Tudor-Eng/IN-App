@@ -1,0 +1,57 @@
+type Query{
+    user(data: FindUserInput): User
+} 
+
+type Mutation{
+    createUser(data: CreateUserInput): User
+}
+
+type Subscription{
+    user: User
+}
+
+input FindUserInput{
+    id: ID,
+    email: String,
+    firstName: String,
+    lastName:String,
+}
+
+input CreateUserInput{
+    email: String!,
+    password: String!,
+    firstName: String,
+    lastName: String,
+    phoneNumber: String!
+}
+
+type User{
+    firstName: String,
+    lastName: String,
+    email: String,
+    phone: String,
+    password: String,
+    balance: Number,
+    location: {lat: String, long: String},
+    friends: [ID]
+    events: {
+        hosting: [ID],
+        attending: [ID],
+        declined: [ID],
+        invitedTo: [ID]
+    }
+}
+
+type Event{
+    date: String,
+    time: String,
+    location: {lat: String, long: String},
+    basePrice: Number,
+    incentive: Number,
+    people: {
+        host: ID,
+        attending: [ID]
+        declined: [ID],
+        invited: [ID]
+    }
+}
